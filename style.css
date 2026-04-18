@@ -45,6 +45,14 @@ nav ul li a{
   font-weight: bolder;
 }
 
+nav ul li a:hover{
+  border: none;
+  border-radius: 10px;
+  background-color: #547DD8;
+  padding: 10px 10px;
+  color: var(--btn-color);
+}
+
 .hero{
   display: flex;
   justify-content: space-between;
@@ -57,12 +65,22 @@ nav ul li a{
   max-width: 500px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: animasi 1s ease forwards;
+}
+@keyframes animasi{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text h1{
   font-size: 40px;
   font-weight: 700;
   color: var(--main-color);
+  animation: fadeup 1s ease forwards;
 }
 .hero-text h2{
   font-size: 30px;
@@ -83,6 +101,10 @@ nav ul li a{
   padding: 12px 24px;
   border-radius: 6px;
   text-decoration: none;
+  transition: 0.3s;
+}
+.btn-primary:hover{
+  transform: scale(1.05);
 }
 .btn-secondary{
   background-color: #E5E7EB;
@@ -90,6 +112,10 @@ nav ul li a{
   padding: 12px 24px;
   border-radius: 6px;
   text-decoration: none;
+  transition: 0.3s;
+}
+.btn-secondary:hover{
+  transform: scale(1.05);
 }
 .hero-img{
   padding: 30px 60px;
@@ -97,4 +123,16 @@ nav ul li a{
 .hero-img img{
   margin-top: 80px;
   width: 420px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
